@@ -1,0 +1,12 @@
+<%-include("partials/header")-%>
+
+<h1>Home</h1>
+<p><%= homearticle %></p>
+
+<% POSTS.forEach(function(post){ %>
+<h1><%= post.name.charAt(0).toUpperCase() + post.name.slice(1) %></h1>
+<p><%= post.content.substring(0,100) + "..." %>
+  <a href="/posts/<%= post.name %>">Read More</a></p>
+<% }); %>
+
+<%-include("partials/footer")-%>
